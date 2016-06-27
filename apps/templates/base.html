@@ -27,16 +27,16 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-mid-10 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-2">
                     {% block article_list %}{% endblock %}
                 </div>
             </div>
         </div>
 
-        <div class="footers">
-            <ul class="pull-left">
-            {% block footer %}{% endblock %}
-            </ul>
-        </div>
+            <div class="footer">
+                <ul class="pull-mid">
+                    {% block footer %}{% endblock %}
+                </ul>
+            </div>
     </body>
 </html>

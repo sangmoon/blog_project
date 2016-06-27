@@ -1,10 +1,10 @@
 body{
 	background-color: #ffffff;
 	color: #151515;
-	margin: 0;
+	/*margin: 0;*/
 	/*padding: 14px;*/
 	font-size: 14px;
-    font-weight: 400;
+    /*font-weight: 400;*/
 	line-height: 28px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-decoration: none;
@@ -14,11 +14,12 @@ div {
     /*border-style: dashed;*/
 }
 div.container{
-    background-color: lime;
+    /*background-color: lime;*/
 }
 
 .nav {
-    background-color: red;
+    background-color: #efefef;
+    /*background-color: red;*/
 }
 .nav a{
     /*padding: 14px;*/
@@ -29,15 +30,22 @@ div.container{
     display: inline;
 }
 
-.footers {
-    background-color: blue;
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    /*padding: 1rem;*/
+    /*background-color: blue;*/
+    background-color: #efefef;
+    text-align: center;
 }
 
-.footers a{
+.footer a{
     /*padding: 14px;*/
     text-transform: uppercase;
 }
 
-.footers li{
+.footer li{
     display: inline;
 }
