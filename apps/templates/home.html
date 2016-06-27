@@ -1,1 +1,22 @@
 {% extends 'base.html' %}
+    {% block title %}SM blog{% endblock %}
+
+    {% block menubar %}
+        <li><a href= "/">main</a></li>
+        <li><a href = "/about">about</a></li>
+    {% endblock %}
+
+    {% block greeting %}
+        <p>Testing...</p>
+        <p>Hola! 박상문 블로그 입니다.</p>
+        <p>그럼 안녕.</p>
+    {% endblock %}
+
+    {% block article_list %}
+        <p>노트 리스트 있는 곳 입니다.</p>
+    {% endblock %}
+
+    {% block footer %}
+        <li><a href="/">psm</a></li>
+        <li><a href="/">python</a></li>
+    {% endblock %}

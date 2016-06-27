@@ -1,9 +1,43 @@
 body{
-	background-color: #fdfdfd;
-	color: #2e2e2e;
+	background-color: #ffffff;
+	color: #151515;
 	margin: 0;
-	padding: 0;
+	/*padding: 14px;*/
 	font-size: 14px;
+    font-weight: 400;
 	line-height: 28px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    text-decoration: none;
+}
+
+div {
+    /*border-style: dashed;*/
+}
+div.container{
+    background-color: lime;
+}
+
+.nav {
+    background-color: red;
+}
+.nav a{
+    /*padding: 14px;*/
+    text-transform: uppercase;
+}
+
+.nav li{
+    display: inline;
+}
+
+.footers {
+    background-color: blue;
+}
+
+.footers a{
+    /*padding: 14px;*/
+    text-transform: uppercase;
+}
+
+.footers li{
+    display: inline;
 }
