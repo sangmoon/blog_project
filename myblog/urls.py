@@ -21,5 +21,6 @@ from apps import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^note/', views.note, name='note'),
+    url(r'^about/', views.about, name='about'),
     url(r'^$', views.home_page, name='home_page'),
 ]

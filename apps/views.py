@@ -9,3 +9,7 @@ def home_page(request):
 
 def note(request):
     return HttpResponse("This is note page.")
+
+
+def about(request):
+    return render(request, 'about.html',)
