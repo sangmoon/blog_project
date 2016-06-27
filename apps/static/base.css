@@ -10,11 +10,15 @@ body{
     text-decoration: none;
 }
 
-div {
-    /*border-style: dashed;*/
+
+/* nav 와 footer. 구분이 존재하나? */
+
+.greeting {
+    border-style: dashed;
 }
-div.container{
-    /*background-color: lime;*/
+
+.article_list{
+    border-style: dashed;
 }
 
 .nav {
@@ -36,7 +40,6 @@ div.container{
     bottom: 0;
     left: 0;
     /*padding: 1rem;*/
-    /*background-color: blue;*/
     background-color: #efefef;
     text-align: center;
 }
