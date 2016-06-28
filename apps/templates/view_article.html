@@ -3,18 +3,14 @@
 
     {% block content %}
         <article>
-            <header>
-                <h3>Title : {{article.title}}</h3>
-                <p>
-                    Posted on <time>
-                    {{article.created_at}}
-                    </time>
-                </p>
-                <p>writer : {{article.user}}</p>
-            </header>
-
+            <h3>Title : {{article.title}}</h3>
+            <p>
+                Posted on <time>
+                {{article.created_at}}
+                </time>
+            </p>
+            <p>writer : {{article.user}}</p>
             {{article.content|safe}}
-
         </article>
     {% endblock %}
 

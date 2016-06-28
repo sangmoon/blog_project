@@ -11,25 +11,38 @@
         <link rel="stylesheet" type="text/css" href="/static/base.css">
         <link rel="shortcut icon" type="image/ico" href="/static/fuck.ico">
     </head>
-
     <body>
-        <div class="nav">
-            <ul class="pull-left">
-                <li><a href= "/">main</a></li>
-                <li><a href = "/about">about</a></li>
-            </ul>
-        </div>
+        <header>
+
+            <nav class="nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-10 col-md-offset-1">
+                            <ul class="pull-left">
+                                <li><a href="/">Fuck Code</a></li>
+                                <li><a href= "/">main</a></li>
+                                <li><a href = "/about">about</a></li>
+                            </ul>
+                            <ul class="pull-right">
+                                <li><a href="/">뭘 넣을까</a></li>
+                                <li><a href="/">이건 비밀</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+        </header>
 
         <div class="container">
             <div class="row">
-
-                <div class="col-md-10 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-1">
                     <div class="content">
                     {% block content %}{% endblock %}
                     </div>
                 </div>
 
-                <div class="col-md-10 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-1">
                     <div class="article_list">
                     {% block article_list %}{% endblock %}
                     </div>
@@ -37,11 +50,11 @@
             </div>
         </div>
 
-            <div class="footer">
-                <ul class="pull-mid">
-                    <li><a href="/">psm</a></li>
-                    <li><a href="/">python</a></li>
-                </ul>
-            </div>
+        <footer class="footer">
+            <ul class="pull-left">
+                <li><a href="/">psm</a></li>
+                <li><a href="/">python</a></li>
+            </ul>
+        </footer>
     </body>
 </html>
