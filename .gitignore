@@ -59,12 +59,12 @@ target/
 # db
 db.sqlite3
 
-
-
-
 staticfiles
 venv
 .env
 
 # pycharm
 .idea
+
+# for mac
+.DS_Store
