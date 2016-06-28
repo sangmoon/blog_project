@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 
 class Article(models.Model):
 
-    user = models.ForeignKey(User, default=None)
+    user = models.ForeignKey(User, default=1)
     title = models.CharField(max_length=128)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
