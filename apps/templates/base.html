@@ -20,19 +20,21 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-md-10 col-md-offset-2">
+                <div class="col-md-10 col-md-push-2">
                     <div class="content">
                     {% block content %}{% endblock %}
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-2">
+                <div class="col-md-10 col-md-push-2">
                     <div class="article_list">
                     {% block article_list %}{% endblock %}
+                    </div>
+                </div>
+
+                <div class="col-md-2 col-md-pull-10">
+                    <div class="sidebar">
+                        sidebar를 위해
                     </div>
                 </div>
             </div>
