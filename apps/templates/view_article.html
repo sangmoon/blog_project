@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+    {% block title %}SM blog{% endblock %}
+
+    {% block content %}
+        <article>
+            <header>
+                <h3>Title : {{article.title}}</h3>
+                <p>
+                    Posted on <time>
+                    {{article.created_at}}
+                    </time>
+                </p>
+                <p>writer : {{article.user}}</p>
+            </header>
+
+            {{article.content|safe}}
+
+        </article>
+    {% endblock %}
+
+    {% block article_list %}
+        <p>노트 리스트 있는 곳 입니다.</p>
+    {% endblock %}

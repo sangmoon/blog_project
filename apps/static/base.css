@@ -8,6 +8,7 @@ body{
 	line-height: 28px;
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     text-decoration: none;
+    height: 100%;
 }
 
 
@@ -19,6 +20,12 @@ body{
 
 .article_list{
     border-style: dashed;
+}
+
+.sidebar{
+    border-style: dashed;
+    height: 100%;
+    text-align:center;
 }
 
 .nav {
