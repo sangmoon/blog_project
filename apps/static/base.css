@@ -9,9 +9,11 @@ body{
     height: 100%;
 }
 
+
 a{
     color: #151515;
 }
+
 
 /* nav 와 footer. 구분이 존재하나? */
 
@@ -39,9 +41,10 @@ a{
     border-style: dashed;
 }
 
+
 .article_list{
     border-style: dashed;
-}
+
 
 .article{
     margin-top:2rem;
