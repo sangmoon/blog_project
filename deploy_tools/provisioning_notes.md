@@ -28,6 +28,7 @@ eg, on Ubuntu:
 ##Folder structure:
 Assume we have auser account at /home/username
 
+
 /home/username    
 └── sites    
     └── SITENAME    
@@ -35,3 +36,4 @@ Assume we have auser account at /home/username
          ├── source    
          ├── static    
          └── virtualenv    
+
