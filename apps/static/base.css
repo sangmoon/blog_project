@@ -44,9 +44,10 @@ a{
 
 .article_list{
     border-style: dashed;
+}
 
+.article {
 
-.article{
     margin-top:2rem;
 }
 
