@@ -14,9 +14,16 @@ a{
     color: #151515;
 }
 
+header{
+    margin-top:2rem;
+    margin-bottom:2rem;
+}
 
 /* nav 와 footer. 구분이 존재하나? */
 
+.nav{
+    border-bottom-style: ridge;
+}
 
 .nav a{
     text-transform: uppercase;
@@ -29,21 +36,27 @@ a{
     display: inline;
 }
 
+#mark a{
+    text-decoration: none;
+}
+
 .nav .pull-right li{
     margin-left: 2rem;
     display: inline;
 }
 
+
+
 .content {
     width: 100%;
     height: 100%;
     height: 20rem;
-    border-style: dashed;
+    /*border-style: dashed;*/
 }
 
 
 .article_list{
-    border-style: dashed;
+    /*border-style: dashed;*/
 }
 
 .article {
@@ -51,13 +64,15 @@ a{
     margin-top:2rem;
 }
 
-.footer {
+footer{
     position: absolute;
-    right: 0;
     bottom: 0;
     left: 0;
+    width:100%;
+    border-top-style: ridge;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     /*padding: 1rem;*/
-    text-align: center;
 }
 
 .footer ul{
