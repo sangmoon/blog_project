@@ -3,14 +3,14 @@
 
     {% block content %}
         <article>
-            <h3>Title : {{article.title}}</h3>
+            <h3>{{article.title}}</h3>
             <p>
                 Posted on <time>
                 {{article.created_at}}
                 </time>
             </p>
             <p>writer : {{article.user}}</p>
-            {{article.content|safe}}
+            {{article.content|linebreaks}}
         </article>
     {% endblock %}
 

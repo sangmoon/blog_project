@@ -28,9 +28,11 @@ header{
 .nav a{
     text-transform: uppercase;
 }
+
 .nav ul{
     padding-left:0;
 }
+
 .nav .pull-left li{
     margin-right: 2rem;
     display: inline;
@@ -60,7 +62,6 @@ header{
 }
 
 .article {
-
     margin-top:2rem;
 }
 
