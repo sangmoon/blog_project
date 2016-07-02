@@ -3,26 +3,28 @@
 
     {% block content %}
         <h4>이 블로그는 박상문님의 블로그입니다.</h4>
-        <p>웹과 앱에 관심이 많고, python django를 공부하고 있습니다. 친구들 만나느라 샤샤</p>
-    {% endblock %}
+        <p>웹과 앱에 관심이 많고, python django를 공부하고 있습니다.<br> 친구들 만나느라 샤샤
+        </p>
 
-    {% block article_list %}
-        <h4>최근 업로드된 글</h4>
-        {% for article in article_list %}
-        <div class="article">
-            <h5>
-                <a href="{% url 'article' article.id %}">
-                {{article.title}}
-                </a>
-            </h5>
-            <p>
-                Posted
-                <time>
-                    {{article.created_at|date}}
-                </time>
-            </p>
+        <hr>
+
+        <div class="article_list">
+            <h4>최근 업로드된 글</h4>
+            {% for article in article_list %}
+            <div class="article">
+                <h5>
+                    <a href="{% url 'article' article.id %}">
+                    {{article.title}}
+                    </a>
+                </h5>
+                <p>
+                    Posted
+                    <time>
+                        {{article.created_at|date:"H:i"}}
+                        {{article.created_at|date:"D d M Y"}}
+                    </time>
+                </p>
+            </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     {% endblock %}
-
-
