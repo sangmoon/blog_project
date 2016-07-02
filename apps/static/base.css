@@ -6,7 +6,6 @@ body{
 	font-size: 14px;
 	font-family: 'Nanum Gothic', Helvetica, Arial, sans-serif;
     text-decoration: none;
-    /*height: 100%;*/
 }
 
 
@@ -21,19 +20,19 @@ header{
 
 /* nav 와 footer. 구분이 존재하나? */
 
-.nav{
+nav{
     border-bottom-style: ridge;
 }
 
-.nav a{
+nav a{
     text-transform: uppercase;
 }
 
-.nav ul{
+nav ul{
     padding-left:0;
 }
 
-.nav .pull-left li{
+nav .pull-left li, .pull-right li{
     margin-right: 2rem;
     display: inline;
 }
@@ -42,22 +41,8 @@ header{
     text-decoration: none;
 }
 
-.nav .pull-right li{
-    margin-left: 2rem;
-    display: inline;
-}
-
-
-
 .content {
     width: 100%;
-    /*height: 100%;*/
-    /*border-style: dashed;*/
-}
-
-
-.article_list{
-    /*border-style: dashed;*/
 }
 
 .article {
@@ -75,10 +60,10 @@ footer{
     /*padding: 1rem;*/
 }
 
-.footer ul{
+footer ul{
     padding-left:0;
 }
-.footer li{
+footer li{
     margin-right: 2rem;
     display: inline;
 }
