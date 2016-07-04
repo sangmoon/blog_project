@@ -8,17 +8,13 @@ body{
     text-decoration: none;
 }
 
+header{
+    margin:2rem 0rem;
+}
 
 a{
     color: #151515;
 }
-
-header{
-    margin-top:2rem;
-    margin-bottom:2rem;
-}
-
-/* nav 와 footer. 구분이 존재하나? */
 
 nav{
     border-bottom-style: ridge;
@@ -43,10 +39,14 @@ nav .pull-left li, .pull-right li{
 
 .content {
     width: 100%;
+    margin: 2rem 0rem;
 }
 
 .article {
-    margin-top:2rem;
+    margin:2rem 0rem;
+}
+article > h3{
+    margin: 2rem 0rem;
 }
 
 footer{
@@ -56,8 +56,7 @@ footer{
     width:100%;
     border-top-style: ridge;
     margin-top: 2rem;
-    margin-bottom: 2rem;
-    /*padding: 1rem;*/
+    padding: 1rem 0rem;
 }
 
 footer ul{
