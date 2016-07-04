@@ -10,8 +10,8 @@
                         {{article.created_at|date:"D d M Y"}}
                 </time>
             </p>
-            <p>writer : {{article.user}}</p>
-            {{article.content|linebreaks}}
+            <p>writer : {{user}}</p>
+            {{content|safe|linebreaks}}
         </article>
     {% endblock %}
 

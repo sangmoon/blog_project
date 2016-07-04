@@ -1,2 +1,4 @@
 Django==1.9.6
+gfm==0.0.3
 gunicorn==19.6.0
+Markdown==2.6.6
