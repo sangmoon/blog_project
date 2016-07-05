@@ -2,9 +2,6 @@ from django.shortcuts import render, get_object_or_404
 # from django.http import HttpResponse
 from .models import Article
 from django.contrib.auth.models import User
-from gfm import gfm
-from markdown import markdown
-# from markdown import markdown
 # Create your views here.
 
 
@@ -16,7 +13,7 @@ def home_page(request):
 def article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     user = get_object_or_404(User, pk=article.user.id)
-    content = markdown(gfm(article.content,))
+    content = article.content
 
     return render(
         request, 'view_article.html',
