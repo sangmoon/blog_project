@@ -12,9 +12,10 @@ header{
     margin:2rem 0rem;
 }
 
-a{
+header a{
     color: #151515;
 }
+
 
 nav{
     border-bottom-style: ridge;
@@ -33,9 +34,10 @@ nav .pull-left li, .pull-right li{
     display: inline;
 }
 
-.main {
-
+.main a{
+    color: #151515;
 }
+
 
 #mark a{
     text-decoration: none;
