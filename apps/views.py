@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 
 
 def home_page(request):
-    article_list = Article.objects.all()
+    article_list = Article.objects.all()[0:10]
     return render(request, 'home.html', {'article_list': article_list})
 
 
