@@ -4,14 +4,16 @@
 
     {% block content %}
         <article>
-            <h3>{{article.title}}</h3>
-            <p>
-                Posted on <time>
-                        {{article.created_at|date:"H:i"}}
-                        {{article.created_at|date:"D d M Y"}}
-                </time>
-            </p>
-            <p>writer : {{user}}</p>
+            <div class='article_header'>
+                <h3>{{article.title}}</h3>
+                <p>
+                    Posted on <time>
+                            {{article.created_at|date:"H:i"}}
+                            {{article.created_at|date:"D d M Y"}}
+                    </time>
+                </p>
+                <p>writer : {{user}}</p>
+            </div>
             {{content|markdown|safe|linebreaks}}
         </article>
     {% endblock %}

@@ -51,8 +51,9 @@ nav .pull-left li, .pull-right li{
 .article {
     margin:2rem 0rem;
 }
-article > h3{
-    margin: 2rem 0rem;
+article .article_header{
+    margin: 3rem 0rem;
+    text-align: center;
 }
 
 footer{
