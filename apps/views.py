@@ -38,6 +38,9 @@ def write(request, article_id=None):
         article = get_object_or_404(Article, pk=article_id)
         if article.user != request.user:
             return HttpResponseForbidden()
+        else:
+            form = ArticleForm(request.POST or None, instance=article)
+            return render(request, 'write_article.html', {'form': form})
 
     else:
         article = Article(user=request.user)
@@ -45,7 +48,6 @@ def write(request, article_id=None):
     form = ArticleForm(request.POST or None, instance=article)
 
     if request.method == 'POST':
-
         if form.is_valid():
             new_article = form.save(commit=False)
             new_article.save()
