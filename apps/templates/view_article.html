@@ -11,6 +11,9 @@
                     </time>
                 </p>
                 <p>writer : {{user}}</p>
+                <form action= {{edit_url}}>
+                    <input type="submit" value="edit">
+                </form>
             </div>
             {{content|markdown|safe|linebreaks}}
         </article>
