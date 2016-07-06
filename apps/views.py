@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
-# from django.http import HttpResponse
+from django.shortcuts import redirect
 from .models import Article
 from django.contrib.auth.models import User
+from .forms import ArticleForm
 # Create your views here.
 
 
@@ -22,3 +23,20 @@ def article(request, article_id):
 
 def about(request):
     return render(request, 'about.html',)
+
+
+def write(request):
+    if request.method == 'POST':
+        form = ArticleForm(request.POST)
+        if form.is_valid():
+            article_title = request.POST['title']
+            article_content = request.POST['content']
+            new_article = Article.objects.create(
+                title=article_title,
+                content=article_content,
+            )
+            pk = new_article.id
+            return redirect('/article/' + str(pk))
+    else:
+        form = ArticleForm()
+    return render(request, 'write_article.html', {'form': form})

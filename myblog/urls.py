@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^article/(?P<article_id>[0-9]+)$', views.article, name='article'),
     url(r'^about/', views.about, name='about'),
+    url(r'^write/', views.write, name='write'),
     url(r'^$', views.home_page, name='home_page'),
 ]

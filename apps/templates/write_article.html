@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <article>
+        <div class="article_header">
+            <h3>글 쓰기</h3>
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type="submit" value="Submit" />
+        </form>
+    </article>
+{% endblock %}
