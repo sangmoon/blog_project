@@ -13,6 +13,7 @@
                 <p>writer : {{user}}</p>
                 <form action= {{edit_url}}>
                     <input type="submit" value="edit">
+                    <input type="hidden" name="edits" value="1">
                 </form>
             </div>
             {{content|markdown|safe|linebreaks}}
