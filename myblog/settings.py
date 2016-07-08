@@ -121,3 +121,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
+
+# for login/ logout
+LOGIN_URL = "/login"
+LOGIN_REDIRECT_URL = "/"
