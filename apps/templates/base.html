@@ -16,7 +16,7 @@
             <nav class="nav">
                 <div class="container">
                     <div class="row">
-                        <div class="col-md-11 col-md-offset-0">
+                        <div class="col-md-10 col-md-offset-1">
                             <ul class="pull-left">
                                 <li id="mark"><a href="/">Real Code</a></li>
                                 <li><a href= "/">main</a></li>
@@ -24,8 +24,12 @@
                                 <li><a href= "/article/6">개발 현황</a></li>
                             </ul>
                             <ul class="pull-right">
-                                <li><a href= "/write" id='write'>글쓰기</a></li>
-                                <li><a href= "/">이건 비밀</a></li>
+                                <li><a href= "/write" id='write_link'>글쓰기</a></li>
+                                {% if request.user.is_authenticated %}
+                                <li><a href= "/logout?return_url={{request.path}}">log out</a></li>
+                                {% else %}
+                                <li><a href= "/login">log in</a></li>
+                                {% endif %}
                             </ul>
                         </div>
                     </div>
@@ -36,7 +40,7 @@
         <div class="main">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-10 col-md-offset-1">
+                    <div class="col-md-9 col-md-offset-2">
                         <div class="content">
                         {% block content %}{% endblock %}
                         </div>
