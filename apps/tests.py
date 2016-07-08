@@ -2,6 +2,7 @@ from django.test import TestCase
 from django.core.urlresolvers import resolve
 from django.http import HttpRequest
 from apps.views import home_page
+from .models import Article
 
 
 class HomePageTest(TestCase):
@@ -17,11 +18,8 @@ class HomePageTest(TestCase):
         self.assertIn(b'<title>SM blog</title>', response.content)
         self.assertTrue(response.content.strip().endswith(b'</html>'))
 
-    def test_home_page_can_save_a_POST_request(self):
-        request = HttpRequest()
-        request.method = 'POST'
-        request.POST['item_text'] = 'A new list item'
 
-        response = home_page(request)
+class ArticleModelTest(TestCase):
 
-        self.assertIn('A new list item', response.content.decode())
+    def test_saving_and_retreiving_article(self):
+        self.fail("here!")

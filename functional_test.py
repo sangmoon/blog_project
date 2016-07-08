@@ -12,13 +12,25 @@ class NewVisitorTest(unittest.TestCase):
     def tearDown(self):
         self.browser.quit()
 
-    def test_can_start_a_list_and_retrieve_it_later(self):
-        self.browser.get('http://localhost:8000/write')
+    def test_can_start_a_page_and_log_in(self):
+        # sangmoon come into this homepage.
+        self.browser.get('http://localhost:8000')
 
+        # He check out title and main message
         self.assertIn('SM blog', self.browser.title)
-        head_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('Your To-Do list', head_text)
+        head_text = self.browser.find_element_by_tag_name('h3').text
+        self.assertIn('이 블로그는 박상문님의 블로그입니다.', head_text)
 
+        # He login and try to write a article
+
+        login_successful = self.client.login(
+            username="", password="")
+        self.asssertTrue(login_successful)
+
+        link = self.browser.find_element_by_id('write_link')
+        link.click()
+
+        '''
         inputbox = self.browser.find_element_by_id('id_new_item')
         self.assertEqual(
             inputbox.get_attribute('placeholder'),
@@ -34,7 +46,7 @@ class NewVisitorTest(unittest.TestCase):
         self.assertTrue(
             any(row.text == '1: Buy peacock feathers' for row in rows)
         )
-
+        '''
         self.fail('Finish the test!')
 
 if __name__ == '__main__':

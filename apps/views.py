@@ -9,7 +9,7 @@ from django.contrib.auth.decorators import login_required
 
 
 def home_page(request):
-    article_list = Article.objects.all()[0:10]
+    article_list = Article.objects.all()
     return render(request, 'home.html', {'article_list': article_list})
 
 
@@ -42,14 +42,13 @@ def write(request, article_id=None):
         if article.user != request.user:
             return HttpResponseForbidden()
         else:
-            print("글 수정하러 들어왔다.")
             form = ArticleForm(request.POST or None, instance=article)
             return render(request, 'write_article.html', {'form': form})
 
     # get && not id
     elif article_id:
         article = get_object_or_404(Article, pk=article_id)
-        print("새로 쓰러 들어왔다.")
+
     else:
         article = Article(user=request.user)
 
@@ -58,14 +57,11 @@ def write(request, article_id=None):
 # POST click
     if request.method == 'POST':
         if form.is_valid():
-            print("go here?")
             new_article = form.save(commit=False)
             new_article.save()
             article_id = new_article.id
             return redirect('/article/' + str(article_id))
-
 # 글 새로 만들기
-
     else:
         form = ArticleForm()
     return render(request, 'write_article.html', {'form': form})
