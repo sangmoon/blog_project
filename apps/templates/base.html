@@ -27,7 +27,7 @@
                             <ul class="pull-right">
                                 <li><a href= "/write" id='write_link'>글쓰기</a></li>
                                 {% if request.user.is_authenticated %}
-                                <li><a href= "/logout?return_url={{request.path}}">log out</a></li>
+                                <li><a href= "/logout?return_url={{request.path}}" id='log_out'>log out</a></li>
                                 {% else %}
                                 <li><a href= "/login" id="log_in">log in</a></li>
                                 {% endif %}

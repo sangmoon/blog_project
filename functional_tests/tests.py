@@ -53,9 +53,20 @@ class NewVisitorTest(LiveServerTestCase):
         password_box.send_keys(password)
         login_key.click()
 
-        # title_box =
-        # content_box =
-        # submit_key =
+        self.assertTrue(self.browser.find_element_by_id('log_out'))
+
+        title_box = self.browser.find_element_by_id('id_title')
+        content_box = self.browser.find_element_by_id('id_content')
+        submit_key = self.browser.find_element_by_id('submit')
+
+        test_title = 'test_title'
+        test_content = 'test_content'
+
+        title_box.send_keys(test_title)
+        content_box.send_keys(test_content)
+        submit_key.click()
+
+        # 여기서 원래 타이틀, 내용, 작성자랑 화면에 나오는 내용 맞는지 체크
         '''
         # self.assertEqual()
 
