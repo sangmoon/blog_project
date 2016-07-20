@@ -1,15 +1,16 @@
 @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
-
+@import url(https://fonts.googleapis.com/css?family=Noto+Sans);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
 body{
 	background-color: #ffffff;
 	color: #151515;
 	font-size: 14px;
-	font-family: 'Nanum Gothic', Helvetica, Arial, sans-serif;
+	font-family:'Spoca Han Sans' ,'Noto Sans', 'Nanum Gothic', Helvetica, Arial, sans-serif;
     text-decoration: none;
 }
 
 header{
-    margin:2rem 0rem;
+    margin-bottom: 2rem;
 }
 
 header a{
@@ -18,7 +19,10 @@ header a{
 
 
 nav{
-    border-bottom-style: ridge;
+    padding:2rem 0rem 1rem 0rem;
+    /*border-bottom-style: ridge;
+    border-width: thin;*/
+    background-color: #cccccc;
 }
 
 nav a{
@@ -47,6 +51,9 @@ nav .pull-left li, .pull-right li{
     width: 100%;
     margin: 2rem 0rem;
 }
+article{
+    margin:2rem 0rem;
+}
 
 .article {
     margin:2rem 0rem;
@@ -61,12 +68,14 @@ footer{
     bottom: 0;
     left: 0;
     width:100%;
-    border-top-style: ridge;
+    /*border-top-style: ridge;*/
     margin-top: 2rem;
-    padding: 1rem 0rem;
+
+    background-color: #cccccc;
 }
 
 footer ul{
+    padding: 2rem 0rem 1rem 0rem;
     padding-left:0;
 }
 footer li{
