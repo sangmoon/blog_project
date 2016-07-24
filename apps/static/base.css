@@ -21,8 +21,8 @@ header a{
 nav{
     padding:2rem 0rem 1rem 0rem;
     /*border-bottom-style: ridge;
-    border-width: thin;*/
-    background-color: #cccccc;
+    border-width: thin;
+    background-color: #cccccc;*/
 }
 
 nav a{
@@ -70,8 +70,11 @@ footer{
     width:100%;
     /*border-top-style: ridge;*/
     margin-top: 2rem;
+}
 
-    background-color: #cccccc;
+footer #footer{
+    margin-bottom: 0rem;
+
 }
 
 footer ul{
