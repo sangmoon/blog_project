@@ -9,7 +9,6 @@ register = template.Library()
 
 
 class HighlightRenderer(mistune.Renderer):
-
     def block_code(self, code, lang):
         if not lang:
             return '\n<pre><code>%s</code></pre>\n' % mistune.escape(code)
@@ -20,6 +19,6 @@ class HighlightRenderer(mistune.Renderer):
 
 @register.filter
 def markdown(value):
-    renderer = HighlightRenderer()
+    renderer = HighlightRenderer(escape=True, hard_wrap=True)
     markdown = mistune.Markdown(renderer=renderer)
     return markdown(value)
