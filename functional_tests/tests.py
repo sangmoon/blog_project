@@ -37,21 +37,16 @@ class NewVisitorTest(LiveServerTestCase):
             username=username, password=password)
         self.assertTrue(login_successful)
         '''
-        link = self.browser.find_element_by_id('write_link')
-        link.click()
+        self.browser.find_element_by_id('write_link').click()
 
         self.assertEqual(
             self.browser.current_url,
             self.live_server_url + "/login?next=/write"
         )
 
-        username_box = self.browser.find_element_by_id('id_username')
-        password_box = self.browser.find_element_by_id('id_password')
-        login_key = self.browser.find_element_by_id('submit')
-
-        username_box.send_keys(username)
-        password_box.send_keys(password)
-        login_key.click()
+        self.browser.find_element_by_id('id_username').send_keys(username)
+        self.browser.find_element_by_id('id_password').send_keys(password)
+        self.browser.find_element_by_id('submit').click()
 
         self.assertTrue(self.browser.find_element_by_id('log_out'))
 
