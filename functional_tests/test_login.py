@@ -1,22 +1,13 @@
-from selenium import webdriver
-import unittest
-from selenium.webdriver.common.keys import Keys
-from django.test import LiveServerTestCase
+
+from .base import FuntionalTest
 from django.contrib.auth.models import User
 
 
-class NewVisitorTest(LiveServerTestCase):
-
-    def setUp(self):
-        self.browser = webdriver.Firefox()
-        self.browser.implicitly_wait(3)
-
-    def tearDown(self):
-        self.browser.quit()
+class NewVisitorTest(FuntionalTest):
 
     def test_can_start_a_page_and_log_in(self):
         # sangmoon come into this homepage.
-        self.browser.get(self.live_server_url)
+        self.browser.get(self.server_url)
 
         # He check out title and main message
         self.assertIn('SM blog', self.browser.title)
@@ -41,7 +32,7 @@ class NewVisitorTest(LiveServerTestCase):
 
         self.assertEqual(
             self.browser.current_url,
-            self.live_server_url + "/login?next=/write"
+            self.server_url + "/login?next=/write"
         )
 
         self.browser.find_element_by_id('id_username').send_keys(username)
@@ -49,17 +40,6 @@ class NewVisitorTest(LiveServerTestCase):
         self.browser.find_element_by_id('submit').click()
 
         self.assertTrue(self.browser.find_element_by_id('log_out'))
-
-        title_box = self.browser.find_element_by_id('id_title')
-        content_box = self.browser.find_element_by_id('id_content')
-        submit_key = self.browser.find_element_by_id('submit')
-
-        test_title = 'test_title'
-        test_content = 'test_content'
-
-        title_box.send_keys(test_title)
-        content_box.send_keys(test_content)
-        submit_key.click()
 
         # 여기서 원래 타이틀, 내용, 작성자랑 화면에 나오는 내용 맞는지 체크
         '''
