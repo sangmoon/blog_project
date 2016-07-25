@@ -1,10 +1,13 @@
 from .base import FuntionalTest
-from django.contrib.auth.models import User
 
 
-class NewVisitorTest(FuntionalTest):
+class NewArticleTest(FuntionalTest):
 
-    def test_can_start_a_page_and_log_in(self):
+    def tset_can_not_write_article_without_login(self):
+        pass
+
+    def test_can_write_new_article(self):
+
         test_title = 'test_title'
         test_content = 'test_content'
 

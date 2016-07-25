@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden, HttpResponseRedirect
 from .models import Article
 from django.contrib.auth.models import User
 from .forms import ArticleForm
 from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 
@@ -65,3 +66,9 @@ def write(request, article_id=None):
     else:
         form = ArticleForm()
     return render(request, 'write_article.html', {'form': form})
+
+
+@login_required
+def login_redirect(request):
+    print(request.path)
+    return HttpResponseRedirect(request.path)

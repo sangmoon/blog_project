@@ -7,6 +7,7 @@ body{
 	font-size: 14px;
 	font-family:'Spoca Han Sans' ,'Noto Sans', 'Nanum Gothic', Helvetica, Arial, sans-serif;
     text-decoration: none;
+    height: 100%;
 }
 
 header{
@@ -53,6 +54,7 @@ nav .pull-left li, .pull-right li{
 }
 article{
     margin:2rem 0rem;
+    min-height: 100%;
 }
 
 .article {
