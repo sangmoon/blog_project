@@ -16,7 +16,7 @@
 
     <form method="POST" action="{% url 'login' %}">
     {% csrf_token %}
-    <table>
+        <table>
     <tr>
         <td>{{ form.username.label_tag }}</td>
         <td>{{ form.username }}</td>
@@ -28,7 +28,11 @@
     </table>
 
     <input type="submit" value="로그인" id="submit" />
-    <input type="hidden" name="next" value="{{ next }}"/>
+    {% if next %}
+        <input type="hidden" name="next" value="{{ next }}" />
+    {% else %}
+    <input type="hidden" name="next" value="{{request.META.HTTP_REFERER }}" />
+    {% endif %}
     </form>
 
 
