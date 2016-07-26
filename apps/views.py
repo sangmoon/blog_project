@@ -66,9 +66,3 @@ def write(request, article_id=None):
     else:
         form = ArticleForm()
     return render(request, 'write_article.html', {'form': form})
-
-
-@login_required
-def login_redirect(request):
-    print(request.path)
-    return HttpResponseRedirect(request.path)

@@ -24,7 +24,6 @@ urlpatterns = [
     url(r'^about$', views.about, name='about'),
     url(r'^write', views.write, name='write'),
     url(r'^edit/(?P<article_id>[0-9]+)$', views.write, name='edit'),
-    url(r'^login_redirect$', views.login_redirect, name='redirect'),
     url(r'^login$', login, name='login',
         kwargs={
             'template_name': 'login.html'
