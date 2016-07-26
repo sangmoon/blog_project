@@ -28,11 +28,12 @@
     </table>
 
     <input type="submit" value="로그인" id="submit" />
-    {% if next %}
+    <!--{% if next %}-->
         <input type="hidden" name="next" value="{{ next }}" />
+    <!--
     {% else %}
     <input type="hidden" name="next" value="{{request.META.HTTP_REFERER }}" />
-    {% endif %}
+    {% endif %}-->
     </form>
 
 
