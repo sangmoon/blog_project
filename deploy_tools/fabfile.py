@@ -15,6 +15,9 @@ def deploy():
     _update_static_files(source_folder)
     _update_database(source_folder)
 
+def nginx():
+    run('sudo service nginx reload')
+
 
 def _create_directory_structure_if_necessary(site_folder):
     for subfolder in ('database', 'static', 'virtualenv', 'source'):
@@ -61,7 +64,6 @@ def _update_database(source_folder):
     run('cd %s && ../virtualenv/bin/python3 manage.py migrate --noinput' % (
         source_folder,
     ))
-
 
 
 

@@ -21,3 +21,11 @@ django-admin makeproject myblog
 python manage.py startapp app
 ```
 ---------
+
+## deploy
+deploy 는 배포
+nginx는 서버 재시작
+```
+$ fab deploy:host=smant@www.sangmoonpark.com
+$ fab nginx:host=smant@www.sangmoonpark.com
+```
