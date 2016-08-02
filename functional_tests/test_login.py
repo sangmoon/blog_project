@@ -33,7 +33,7 @@ class NewVisitorTest(FuntionalTest):
 
         self.assertTrue(self.browser.find_element_by_id('log_out'))
 
-    def test_log_in_redirect_prev_page(self):
+    def test_log_in_and_out_redirect_prev_page(self):
         # He go to about page,
         # and log_in
         self.browser.get(self.server_url)
@@ -52,6 +52,13 @@ class NewVisitorTest(FuntionalTest):
         self.browser.find_element_by_id('id_username').send_keys(username)
         self.browser.find_element_by_id('id_password').send_keys(password)
         self.browser.find_element_by_id('submit').click()
+
+        self.assertEqual(
+            self.browser.current_url,
+            self.server_url + '/about',
+        )
+
+        self.browser.find_element_by_id('log_out').click()
 
         self.assertEqual(
             self.browser.current_url,

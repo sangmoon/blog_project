@@ -125,3 +125,6 @@ STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
 # for login/ logout
 LOGIN_URL = "/login"
 LOGIN_REDIRECT_URL = "/"
+
+# browser auto log-out
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
