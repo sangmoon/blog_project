@@ -27,9 +27,11 @@ python manage.py startapp app
 ## deploy
 deploy 는 배포
 nginx는 서버 재시작
+gunicorn으로 소켓 재설정
 ```
 $ fab deploy:host=smant@www.sangmoonpark.com
 $ fab nginx:host=smant@www.sangmoonpark.com
+$ fab gunicorn:host=smant@www.sangmoonpark.com
 ```
 
 ## js-markdown library  

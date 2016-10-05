@@ -18,6 +18,9 @@ def deploy():
 def nginx():
     run('sudo service nginx reload')
 
+def gunicorn():
+    run('sudo start gunicorn-www.sangmoonpark.com')
+
 
 def _create_directory_structure_if_necessary(site_folder):
     for subfolder in ('database', 'static', 'virtualenv', 'source'):
