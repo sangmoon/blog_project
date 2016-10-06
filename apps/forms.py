@@ -18,6 +18,6 @@ class ArticleForm(forms.ModelForm):
             'content': forms.Textarea(attrs={
                 'placeholder': 'content',
                 'class': 'form-control input-md',
-                'oninput': 'this.editor.update()'
+                # 'oninput': 'this.editor.update()'
             }),
         }
