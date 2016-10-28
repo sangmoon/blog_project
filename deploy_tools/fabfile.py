@@ -15,11 +15,13 @@ def deploy():
     _update_static_files(source_folder)
     _update_database(source_folder)
 
+
 def nginx():
     run('sudo service nginx reload')
 
+
 def gunicorn():
-    run('sudo start gunicorn-www.sangmoonpark.com')
+    run('sudo restart gunicorn-www.sangmoonpark.com')
 
 
 def _create_directory_structure_if_necessary(site_folder):
