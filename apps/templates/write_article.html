@@ -11,8 +11,8 @@
                     <span class="help-block">{{form.errors}}</span>
                 </div>
             {% endif %}
-            <button type="button">글쓰기</button>
-            <button type="button">미리보기</button>
+            <button type="button" id="write_button">글쓰기</button>
+            <button type="button" id="preview_button">미리보기</button>
             <br><br>
 
             {{form.title}}
@@ -22,19 +22,5 @@
             <br>
             <input type="submit" value="Submit" id="submit" class="form-control"/>
         </form>
-        <!--
-        <div id="preview" style="height: 100px"></div>
-        <script>
-          function Editor(input, preview){
-            this.update = function() {
-              preview.innerHTML = markdown.toHTML(input.value);
-            };
-            input.editor = this;
-            this.update();
-          }
-          var $ = function (id) {return document.getElementById(id);};
-          new Editor($("id_content"), $("preview"));
-        </script>
-        -->
     </article>
 {% endblock %}
