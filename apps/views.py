@@ -1,10 +1,11 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
-from django.http import HttpResponseForbidden, HttpResponseRedirect
+from django.http import HttpResponseForbidden, HttpResponse, JsonResponse
 from .models import Article
 from django.contrib.auth.models import User
 from .forms import ArticleForm
 from django.contrib.auth.decorators import login_required
+from .templatetags.markdownify import markdown
 
 # Create your views here.
 
@@ -66,3 +67,10 @@ def write(request, article_id=None):
     else:
         form = ArticleForm()
     return render(request, 'write_article.html', {'form': form})
+
+
+def view_markdown(request):
+    data = {
+        'md_js': markdown(request.GET.get('content'))
+    }
+    return JsonResponse(data)

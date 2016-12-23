@@ -32,5 +32,6 @@ urlpatterns = [
         kwargs={
             'template_name': 'logout.html',
         }),
+    url(r'^markdown/$', views.view_markdown, name='md'),
     url(r'^$', views.home_page, name='home_page'),
 ]
