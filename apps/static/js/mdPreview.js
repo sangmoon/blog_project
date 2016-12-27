@@ -14,20 +14,24 @@ function markdownPreview() {
             },
             dataType: 'json',
             success: function (data) {
+                //if(! document.body.contains()){
+                    var cover = document.createElement('div');
+                    cover.className = "mdPreview";
+                    $(cover).append($.parseHTML(data.md_js));
+                    $("#id_content").after(cover);
 
-                $("#id_content").after(data.md_js);
+                //}
             }
         })
     });
 }
-
 
 function recover2WritingForm() {
     var wb = document.getElementById('write_button');
     var target = document.getElementById('id_content');
     wb.addEventListener("click", function() {
         target.style.display = 'inline';
-        $(".highlight").remove();
+        $(".mdPreview").remove();
     });
 }
 
@@ -44,8 +48,6 @@ function addLoadEvent(func){
         }
     }
 }
-
-
 
 addLoadEvent(markdownPreview);
 addLoadEvent(recover2WritingForm);
