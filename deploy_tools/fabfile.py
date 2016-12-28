@@ -7,12 +7,13 @@ from fabric.network import ssh
 from fabric.contrib.files import append, exists, sed
 from fabric.api import env, local, run
 import random
-
+# import logging
 REPO_URL = 'https://github.com/sangmoon/blog_project.git'
 
 
 def deploy():
     ssh.util.log_to_file("paramiko.log", 10)
+    # logging.basicConfig(level=logging.DEBUG)
     site_folder = '/home/%s/sites/%s' % (env.user, env.host)
     source_folder = site_folder + '/source'
     _create_directory_structure_if_necessary(site_folder)
