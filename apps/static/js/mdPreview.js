@@ -1,5 +1,6 @@
 function markdownPreview() {
     var pb = document.getElementById('preview_button');
+    var wb = document.getElementById('write_button');
     var target = document.getElementById('id_content');
     pb.addEventListener("click", function(){
 
@@ -19,7 +20,8 @@ function markdownPreview() {
                     cover.className = "mdPreview";
                     $(cover).append($.parseHTML(data.md_js));
                     $("#id_content").after(cover);
-
+                    pb.disabled = true;
+                    wb.disabled = false;
                 //}
             }
         })
@@ -27,11 +29,14 @@ function markdownPreview() {
 }
 
 function recover2WritingForm() {
+    var pb = document.getElementById('preview_button');
     var wb = document.getElementById('write_button');
     var target = document.getElementById('id_content');
     wb.addEventListener("click", function() {
         target.style.display = 'inline';
         $(".mdPreview").remove();
+        pb.disabled= false;
+        wb.disabled = true;
     });
 }
 

@@ -3,7 +3,7 @@ fab file.
 
 U know?
 """
-
+from fabric.network import ssh
 from fabric.contrib.files import append, exists, sed
 from fabric.api import env, local, run
 import random
@@ -12,6 +12,7 @@ REPO_URL = 'https://github.com/sangmoon/blog_project.git'
 
 
 def deploy():
+    ssh.util.log_to_file("paramiko.log", 10)
     site_folder = '/home/%s/sites/%s' % (env.user, env.host)
     source_folder = site_folder + '/source'
     _create_directory_structure_if_necessary(site_folder)
@@ -23,10 +24,12 @@ def deploy():
 
 
 def nginx():
+    ssh.util.log_to_file("paramiko.log", 10)
     run('sudo service nginx reload')
 
 
 def gunicorn():
+    ssh.util.log_to_file("paramiko.log", 10)
     run('sudo restart gunicorn-www.sangmoonpark.com')
 
 
