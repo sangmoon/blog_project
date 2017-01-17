@@ -6,13 +6,17 @@ from django.contrib.auth.models import User
 from .forms import ArticleForm
 from django.contrib.auth.decorators import login_required
 from .templatetags.markdownify import markdown
+from .models import CATEGORY_CHOICES
 
 # Create your views here.
 
 
 def home_page(request):
-    article_list = Article.objects.all()
-    return render(request, 'home.html', {'article_list': article_list})
+    article_list = list(Article.objects.all())[-7:]
+    return render(
+        request, 'home.html',
+        {'article_list': article_list, 'choices': CATEGORY_CHOICES},
+    )
 
 
 def article(request, article_id):
