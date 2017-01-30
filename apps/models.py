@@ -20,7 +20,7 @@ class Article(models.Model):
     category = models.CharField(
         choices=CATEGORY_CHOICES,
         default='etc', max_length=10)
-    # image = models.ManyToManyField(Image, blank=True)
+    image = models.ManyToManyField(Image, blank=True)
 
     class Meta:
         ordering = ['-created_at']

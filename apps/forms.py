@@ -7,7 +7,7 @@ class ArticleForm(forms.ModelForm):
 
     class Meta:
         model = Article
-        fields = ('title', 'category', 'content',)
+        fields = ('title', 'category', 'content', 'image',)
         exclude = ('user', 'created_at', 'updated_at',)
         widgets = {
             'title': forms.fields.TextInput(attrs={
@@ -24,4 +24,9 @@ class ArticleForm(forms.ModelForm):
                 'placeholder': 'content',
                 'class': 'form-control input-md',
             }),
+
+            'image': forms.ClearableFileInput(attrs={
+                'class': 'form-control input-md',
+            }),
+
         }
