@@ -20,6 +20,14 @@ header a{
     color: #151515;
 }
 
+.category_name{
+  display: inline;
+  color: #888888;
+}
+
+.category_url{
+  display: inline;
+}
 
 nav{
     padding:2rem 0rem 1rem 0rem;

@@ -13,15 +13,15 @@
             <h3>최근 업로드된 글</h3>
             {% for article in article_list %}
             <div class="article">
-                <h4>
+                <p class="category_name">
+                    {{article.category}}
+                </p>
+                <h4 class="category_url">
                     <a href="{% url 'article' article.id %}">
                     {{article.title}}
                     </a>
                 </h4>
-                <p>
-                    category:
-                    {{ choices}}
-                </p>
+
             </div>
             {% endfor %}
         </div>

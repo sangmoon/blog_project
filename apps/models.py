@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 # Create your models here.
 
-CATEGORY_CHOICES = ((1, ('python')), (2, ('notice')), (3, ('etc')))
+CATEGORY_CHOICES = (('python', 'python'), ('notice', 'notice'), ('etc', 'etc'))
 
 
 class Article(models.Model):
@@ -12,7 +12,9 @@ class Article(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     content = models.TextField(max_length=2048)
-    category = models.IntegerField(choices=CATEGORY_CHOICES, default=3)
+    category = models.CharField(
+        choices=CATEGORY_CHOICES,
+        default='etc', max_length=10)
 
     class Meta:
         ordering = ['-created_at']
