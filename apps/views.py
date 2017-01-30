@@ -22,7 +22,6 @@ def home_page(request):
 def article(request, article_id):
     article = get_object_or_404(Article, pk=article_id)
     user = get_object_or_404(User, pk=article.user.id)
-    content = article.content
 
     edit_url = "/edit/" + str(article.id)
 
@@ -30,7 +29,7 @@ def article(request, article_id):
         request, 'view_article.html',
         {
             'article': article, 'user': user,
-            'content': content, 'edit_url': edit_url
+            'content': markdown(article.content), 'edit_url': edit_url
         })
 
 
