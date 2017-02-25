@@ -12,7 +12,7 @@ from .models import CATEGORY_CHOICES
 
 
 def home_page(request):
-    article_list = list(Article.objects.all())[-7:]
+    article_list = Article.objects.all()
     return render(
         request, 'home.html',
         {'article_list': article_list, 'choices': CATEGORY_CHOICES},
