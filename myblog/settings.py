@@ -127,8 +127,6 @@ STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
 LOGIN_URL = "/login"
 LOGIN_REDIRECT_URL = "/"
 
-MEDIA_URL = '/image/'
-MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static/image'))
 
 # browser auto log-out
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True

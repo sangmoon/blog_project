@@ -19,6 +19,7 @@ from apps import views
 from django.contrib.auth.views import login, logout
 
 urlpatterns = [
+    url(r'test/', views.test, name="test"),
     url(r'^admin/', admin.site.urls),
     url(r'^article/(?P<article_id>[0-9]+)$', views.article, name='article'),
     url(r'^about$', views.about, name='about'),

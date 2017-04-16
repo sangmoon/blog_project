@@ -11,6 +11,10 @@ from .models import CATEGORY_CHOICES
 # Create your views here.
 
 
+def test(request):
+    return render(request, 'test.html')
+
+
 def home_page(request):
     article_list = Article.objects.all()
     return render(
