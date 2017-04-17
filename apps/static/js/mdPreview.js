@@ -13,16 +13,24 @@ function markdownPreview() {
             data: {
                 'content': content
             },
+            timeout: 5000,
             dataType: 'json',
-            success: function (data) {
-                //if(! document.body.contains()){
-                    var cover = document.createElement('div');
-                    cover.className = "mdPreview";
-                    $(cover).append($.parseHTML(data.md_js));
-                    $("#id_content").after(cover);
-                    pb.disabled = true;
-                    wb.disabled = false;
-                //}
+            success: function (data, status) {
+              var cover = document.createElement('div');
+              cover.className = "mdPreview";
+              $(cover).append($.parseHTML(data.md_js));
+              $("#id_content").after(cover);
+              pb.disabled = true;
+              wb.disabled = false;
+            },
+            error: function (xhr, status, error) {
+              var cover = document.createElement('div');
+              cover.className = "mdPreview";
+              $(cover).append($.parseHTML(xhr.responseText));
+              $("#id_content").after(cover);
+              pb.disabled = true;
+              wb.disabled = false;
+
             }
         })
     });
