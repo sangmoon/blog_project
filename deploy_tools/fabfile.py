@@ -22,15 +22,17 @@ def deploy():
     _update_virtualenv(source_folder)
     _update_static_files(source_folder)
     _update_database(source_folder)
+    _nginx()
+    _gunicorn()
 
 
-def nginx():
-    ssh.util.log_to_file("paramiko.log", 10)
+def _nginx():
+    # ssh.util.log_to_file("paramiko.log", 10)
     run('sudo service nginx reload')
 
 
-def gunicorn():
-    ssh.util.log_to_file("paramiko.log", 10)
+def _gunicorn():
+    # ssh.util.log_to_file("paramiko.log", 10)
     run('sudo restart gunicorn-www.sangmoonpark.com')
 
 
