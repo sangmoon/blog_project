@@ -369,4 +369,5 @@ svg.on('mousedown', mousedown)
 d3.select(window)
   .on('keydown', keydown)
   .on('keyup', keyup);
+console.log("hello")
 restart();
