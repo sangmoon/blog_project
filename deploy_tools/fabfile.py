@@ -51,11 +51,12 @@ def _get_latest_source(source_folder):
 
 
 def _update_settings(source_folder, site_name):
+    bare_name = site_name.replace("www.", "")
     settings_path = source_folder + '/myblog/settings.py'
     sed(settings_path, "DEBUG = True", "DEBUG = False")
     sed(settings_path,
         'ALLOWED_HOSTS =.+$',
-        'ALLOWED_HOSTS = ["%s"]' % (site_name,))
+        'ALLOWED_HOSTS = ["%s", "%s"]' % (site_name, bare_name))
     secret_key_file = source_folder + '/myblog/secret_key.py'
     if not exists(secret_key_file):
         chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
@@ -81,24 +82,3 @@ def _update_database(source_folder):
     run('cd %s && ../virtualenv/bin/python3 manage.py migrate --noinput' % (
         source_folder,
     ))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
