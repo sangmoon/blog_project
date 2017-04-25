@@ -23,7 +23,7 @@ def deploy():
     _update_static_files(source_folder)
     _update_database(source_folder)
     _nginx()
-    _gunicorn()
+    _gunicorn(env.host)
 
 
 def _nginx():
@@ -31,9 +31,9 @@ def _nginx():
     run('sudo service nginx reload')
 
 
-def _gunicorn():
+def _gunicorn(site_name):
     # ssh.util.log_to_file("paramiko.log", 10)
-    run('sudo restart gunicorn-www.sangmoonpark.com')
+    run('sudo systemctl restart gunicorn-' + site_name)
 
 
 def _create_directory_structure_if_necessary(site_folder):
@@ -68,7 +68,7 @@ def _update_settings(source_folder, site_name):
 def _update_virtualenv(source_folder):
     virtualenv_folder = source_folder + '/../virtualenv'
     if not exists(virtualenv_folder + '/bin/pip'):
-        run('python -m venv %s' % (virtualenv_folder,))
+        run('python3 -m venv %s' % (virtualenv_folder,))
     run('%s/bin/pip install -r %s/requirements.txt' % (
         virtualenv_folder, source_folder
     ))

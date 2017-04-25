@@ -1,0 +1,12 @@
+[Unit]
+Description=gunicorn-SITENAME daemon
+After=network.target
+
+[Service]
+User=smant
+Group=www-data
+WorkingDirectory=/home/smant/sites/SITENAME/source
+ExecStart=/home/smant/sites/SITENAME/virtualenv/bin/gunicorn \ --workers 3 --bind unix:/tmp/SITENAME.socket \ myblog.wsgi:application
+
+ [Install]
+ WantedBy=multi-user.target
