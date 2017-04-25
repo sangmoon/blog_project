@@ -53,7 +53,7 @@ def _get_latest_source(source_folder):
 def _update_settings(source_folder, site_name):
     bare_name = site_name.replace("www.", "")
     settings_path = source_folder + '/myblog/settings.py'
-    # sed(settings_path, "DEBUG = True", "DEBUG = False")
+    sed(settings_path, "DEBUG = True", "DEBUG = False")
     sed(settings_path,
         'ALLOWED_HOSTS =.+$',
         'ALLOWED_HOSTS = ["%s", "%s"]' % (site_name, bare_name))
@@ -68,7 +68,7 @@ def _update_settings(source_folder, site_name):
 def _update_virtualenv(source_folder):
     virtualenv_folder = source_folder + '/../virtualenv'
     if not exists(virtualenv_folder + '/bin/pip'):
-        run('virtualenv --python=python3 %s' % (virtualenv_folder,))
+        run('python -m venv %s' % (virtualenv_folder,))
     run('%s/bin/pip install -r %s/requirements.txt' % (
         virtualenv_folder, source_folder
     ))

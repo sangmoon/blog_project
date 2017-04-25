@@ -3,11 +3,10 @@ Provisioning a new site
 
 ##Required packages:
 
-* nginx
+*nginx
 *Python 3
-*Git
+*git
 *pip
-*virtualenv
 
 eg, on Ubuntu:
 ```shell
@@ -16,17 +15,17 @@ eg, on Ubuntu:
 ```
 
 ## Nginx Virtual Host config
-
+* this files locate at ``/etc/nginx/sites-available``, ``/etc/nginx/sites-enable``
 * see nginx.template.conf
 *replace SITENAME with, eg, www.sangmoonpark.com
 
 ##Upstart job
-
+* this file locate at ``/etc/init/``
 * see gunicorn-upstart.template.conf
 * replace SITENAME with, eg, www.sangmoonpark.com 
 
 ##Folder structure:
-Assume we have auser account at /home/username
+Assume we have a user account at /home/username
 
 
 /home/username    
