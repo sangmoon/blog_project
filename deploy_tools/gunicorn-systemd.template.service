@@ -7,6 +7,7 @@ User=smant
 Group=www-data
 WorkingDirectory=/home/smant/sites/SITENAME/source
 ExecStart=/home/smant/sites/SITENAME/virtualenv/bin/gunicorn \ --workers 3 --bind unix:/tmp/SITENAME.socket \ myblog.wsgi:application
-
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s TERM $MAINPID
  [Install]
  WantedBy=multi-user.target
