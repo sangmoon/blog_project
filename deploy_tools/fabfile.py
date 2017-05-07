@@ -9,6 +9,7 @@ from fabric.api import env, local, run
 import random
 # import logging
 REPO_URL = 'https://github.com/sangmoon/blog_project.git'
+env.use_ssh_config = True
 
 
 def deploy():
@@ -59,8 +60,8 @@ def _update_settings(source_folder, site_name):
         'ALLOWED_HOSTS = ["%s", "%s"]' % (site_name, bare_name))
     sed(
         settings_path,
-        """'NAME': 'mac',""",
-        """'NAME': 'smant',""",
+        '''"NAME": "mac",''',
+        '''"NAME": "smant",''',
     )
     secret_key_file = source_folder + '/myblog/secret_key.py'
     if not exists(secret_key_file):
