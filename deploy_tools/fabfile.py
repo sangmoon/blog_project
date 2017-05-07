@@ -9,12 +9,12 @@ from fabric.api import env, local, run
 import random
 # import logging
 REPO_URL = 'https://github.com/sangmoon/blog_project.git'
-env.use_ssh_config = True
 
 
 def deploy():
-    ssh.util.log_to_file("paramiko.log", 10)
+    # ssh.util.log_to_file("paramiko.log", 10)
     # logging.basicConfig(level=logging.DEBUG)
+    env.use_ssh_config = True
     site_folder = '/home/%s/sites/%s' % (env.user, env.host)
     source_folder = site_folder + '/source'
     _create_directory_structure_if_necessary(site_folder)
@@ -62,6 +62,18 @@ def _update_settings(source_folder, site_name):
         settings_path,
         '''"NAME": "mac",''',
         '''"NAME": "smant",''',
+    )
+
+    sed(
+        settings_path,
+        '''"HOST": "127.0.0.1",''',
+        '''"USER": "smant",''',
+    )
+
+    sed(
+        settings_path,
+        '''"PORT": 5432,''',
+        "",
     )
     secret_key_file = source_folder + '/myblog/secret_key.py'
     if not exists(secret_key_file):
