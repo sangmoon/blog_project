@@ -59,8 +59,8 @@ def _update_settings(source_folder, site_name):
         'ALLOWED_HOSTS = ["%s", "%s"]' % (site_name, bare_name))
     sed(
         settings_path,
-        ''' "NAME": "mac", ''',
-        ''' "NAME": "smant", ''',
+        """'NAME': 'mac',""",
+        """'NAME': 'smant',""",
     )
     secret_key_file = source_folder + '/myblog/secret_key.py'
     if not exists(secret_key_file):
