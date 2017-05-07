@@ -27,3 +27,6 @@ $ fab deploy:host=smant@www.sangmoonpark.com
 $ fab nginx:host=smant@www.sangmoonpark.com
 $ fab gunicorn:host=smant@www.sangmoonpark.com
 ```
+---
+## DB
+postgresql 9.6 

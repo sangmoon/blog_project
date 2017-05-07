@@ -68,3 +68,6 @@ venv
 
 # for mac
 .DS_Store
+
+# DB dump
+database.json

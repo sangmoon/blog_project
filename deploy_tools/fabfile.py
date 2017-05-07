@@ -33,7 +33,7 @@ def _nginx():
 
 def _gunicorn(site_name):
     # ssh.util.log_to_file("paramiko.log", 10)
-    run('sudo systemctl restart gunicorn-' + site_name)
+    run('sudo systemctl reload-or-restart gunicorn-' + site_name)
 
 
 def _create_directory_structure_if_necessary(site_folder):
