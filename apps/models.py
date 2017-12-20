@@ -9,7 +9,7 @@ CATEGORY_CHOICES = (
 
 class Article(models.Model):
 
-    user = models.ForeignKey(User, default=1)
+    user = models.ForeignKey(User, default=1, on_delete=True)
     title = models.CharField(max_length=128)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
