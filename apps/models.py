@@ -20,6 +20,3 @@ class Article(models.Model):
 
     class Meta:
         ordering = ['-created_at']
-
-
-
