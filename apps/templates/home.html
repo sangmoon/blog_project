@@ -1,13 +1,6 @@
 {% extends 'base.html' %}
     {% block content %}
         <article>
-        <div class="jumbotron text-center">
-        <h2>상문 블로그</h2>
-        <p>Java<br> Python<br> JavaScript
-        </p>
-        </div>
-
-        <hr>
 
         <div class="article_list">
             <h3>최근 업로드된 글</h3>
@@ -16,11 +9,11 @@
                 <p class="category_name">
                     {{article.category}}
                 </p>
-                <h4 class="category_url">
+                <span class="category_url">
                     <a href="{% url 'article' article.id %}">
                     {{article.title}}
                     </a>
-                </h4>
+                </span>
 
             </div>
             {% endfor %}

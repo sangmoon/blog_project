@@ -1,51 +1,87 @@
 @import url('http://fonts.googleapis.com/earlyaccess/nanumgothic.css');
-@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css);
+@import url('http:////spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
 
+/*
+ to do: css를 media, body, header, main, footer  순으로 정리해서 적용해야한다. 이는 가독성을 높이는 방
 
+*/
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}
 
 body{
   background-color: #ffffff;
-  color: #151515;
+  color: #555;
   font-size: 14px;
   font-family: 'Spoca Han Sans','Nanum Gothic', Helvetica, Arial, sans-serif;
   text-decoration: none;
   min-height: 100%;
 }
 
-header{
-    margin-bottom: 2rem;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #333;
+}
+
+/*
+ * Override Bootstrap's default container.
+ */
+
+.container {
+  max-width: 60rem;
+}
+
+/*
+ * Masthead for nav
+ */
+
+.blog-masthead {
+  margin-bottom: 3rem;
+  background-color: #428bca;
+  box-shadow: inset 0 -.1rem .25rem rgba(0,0,0,.1);
+}
+
+/* Nav links */
+.nav-link {
+  position: relative;
+  padding: 1rem;
+  font-weight: 500;
+  color: #cdddeb;
+}
+.nav-link:hover,
+.nav-link:focus {
+  color: #fff;
+  background-color: transparent;
 }
 
 header a{
     color: #151515;
 }
 
-.category_name{
-  display: inline;
-  color: #888888;
-}
-
-.category_url{
-  display: inline;
-}
-
-nav{
-    padding:2rem 0rem 1rem 0rem;
-}
-
 nav a{
     text-transform: uppercase;
 }
 
-nav ul{
-    padding-left:0;
-}
-
+/* main */
 .main{
       margin-top:100px;
     min-height: 100%;
 }
-
 
 .main a{
     color: #151515;
@@ -65,7 +101,16 @@ nav ul{
     margin:2rem 0rem;
 }
 
+.category_name{
+  display: inline;
+  color: #888888;
+}
 
+.category_url{
+  display: inline;
+}
+
+/* footer */
 footer{
     position: relative;
     bottom: 0px;
@@ -78,10 +123,9 @@ footer{
   margin-bottom:0px;
 }
 
-
 footer ul{
     padding: 2rem 0rem 1rem 0rem;
-    padding-left:0;
+    padding-left: 0;
 }
 footer li{
     margin-right: 2rem;
