@@ -8,7 +8,7 @@
 -------------
 1. make a project  
 ```python
-django-admin makeproject myblog
+django-admin startproject myblog
 ```
 
 2. make an app
