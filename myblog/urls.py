@@ -14,25 +14,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
 from django.conf.urls import url
+from django.urls import path
 from django.contrib import admin
 from apps import views
 from django.contrib.auth.views import login, logout
 
 urlpatterns = [
-    url(r'test/', views.test, name="test"),
-    url(r'^admin/', admin.site.urls),
-    url(r'^article/(?P<article_id>[0-9]+)$', views.article, name='article'),
-    url(r'^about$', views.about, name='about'),
-    url(r'^write', views.write, name='write'),
-    url(r'^edit/(?P<article_id>[0-9]+)$', views.write, name='edit'),
-    url(r'^login$', login, name='login',
-        kwargs={
+    path('test', views.test, name="test"),
+    path('admin', admin.site.urls),
+    path('article/<int:article_id>', views.article, name='article'),
+    path('about', views.about, name='about'),
+    path('write', views.write, name='write'),
+    path('edit/<int:article_id>', views.write, name='edit'),
+    path('login', login, name='login',
+         kwargs={
             'template_name': 'login.html'
-        }),
-    url(r'^logout$', logout, name='logout',
-        kwargs={
+         }),
+    path('logout', logout, name='logout',
+         kwargs={
             'template_name': 'logout.html',
-        }),
-    url(r'^markdown/$', views.view_markdown, name='md'),
-    url(r'^$', views.home_page, name='home_page'),
+         }),
+    path('markdown', views.view_markdown, name='md'),
+    path('', views.home_page, name='home_page'),
 ]
