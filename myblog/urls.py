@@ -20,7 +20,6 @@ from apps import views
 from django.contrib.auth.views import login, logout
 
 urlpatterns = [
-    path('test', views.test, name="test"),
     path('admin', admin.site.urls),
     path('article/<int:article_id>', views.article, name='article'),
     path('about', views.about, name='about'),

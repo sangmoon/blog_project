@@ -29,12 +29,12 @@ def deploy():
 
 def _nginx():
     # ssh.util.log_to_file("paramiko.log", 10)
-    run('sudo service nginx reload')
+    run('sudo systemctl reload nginx')
 
 
 def _gunicorn(site_name):
     # ssh.util.log_to_file("paramiko.log", 10)
-    run('sudo systemctl reload-or-restart gunicorn-' + site_name)
+    run('sudo systemctl restart gunicorn-' + site_name)
 
 
 def _create_directory_structure_if_necessary(site_folder):
@@ -54,27 +54,11 @@ def _get_latest_source(source_folder):
 def _update_settings(source_folder, site_name):
     bare_name = site_name.replace("www.", "")
     settings_path = source_folder + '/myblog/settings.py'
-    sed(settings_path, "DEBUG = True", "DEBUG = False")
+
     sed(settings_path,
         'ALLOWED_HOSTS =.+$',
         'ALLOWED_HOSTS = ["%s", "%s"]' % (site_name, bare_name))
-    sed(
-        settings_path,
-        '''"NAME": "mac",''',
-        '''"NAME": "smant",''',
-    )
 
-    sed(
-        settings_path,
-        '''"HOST": "127.0.0.1",''',
-        '''"USER": "smant",''',
-    )
-
-    sed(
-        settings_path,
-        '''"PORT": 5432,''',
-        "",
-    )
     secret_key_file = source_folder + '/myblog/secret_key.py'
     if not exists(secret_key_file):
         chars = 'abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)'
