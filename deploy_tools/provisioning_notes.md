@@ -1,7 +1,7 @@
 Provisioning a new site
 =======================
 
-##Required packages:
+## Required packages:
 
 * nginx
 * Python 3
@@ -25,7 +25,7 @@ sudo systemctl restart nginx
 
 
 
-##Systemd job
+## Systemd job
 * this file locate at ``/etc/systemd/system``
 * see gunicorn-systemd.tetmplate.service
 * replace SITENAME with, eg, www.sangmoonpark.com 
@@ -35,7 +35,7 @@ sudo systemctl restart gunicorn-SITENAME
 ```
 
 
-##Folder structure:
+## Folder structure:
 Assume we have a user account at /home/username
 
 

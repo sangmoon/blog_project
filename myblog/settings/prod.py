@@ -12,3 +12,6 @@ DATABASES = {
 }
 
 ALLOWED_HOSTS = ['www.sangmoonpark.com', 'sangmoonpark.com']
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
