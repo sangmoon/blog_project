@@ -9,7 +9,7 @@ function markdownPreview() {
 
         $.ajax({
             type: 'get',
-            url: '/markdown/',
+            url: '/markdown',
             data: {
                 'content': content
             },

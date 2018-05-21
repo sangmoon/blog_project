@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block content %}
 
     <article>
@@ -26,4 +28,8 @@
             <input type="submit" value="Submit" id="submit" class="form-control"/>
         </form>
     </article>
+{% endblock %}
+
+{% block jsScript %}
+    <script type="text/javascript" src= "{% static "js/mdPreview.js" %}" ></script>
 {% endblock %}
