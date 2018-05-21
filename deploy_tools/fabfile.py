@@ -52,12 +52,7 @@ def _get_latest_source(source_folder):
 
 
 def _update_settings(source_folder, site_name):
-    bare_name = site_name.replace("www.", "")
-    settings_path = source_folder + '/myblog/settings.py'
-
-    sed(settings_path,
-        'ALLOWED_HOSTS =.+$',
-        'ALLOWED_HOSTS = ["%s", "%s"]' % (site_name, bare_name))
+    settings_path = source_folder + '/myblog/settings/common.py'
 
     secret_key_file = source_folder + '/myblog/secret_key.py'
     if not exists(secret_key_file):
