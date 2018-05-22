@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
-    {% block content %}
-        <article>
-
-        <div class="article_list">
-            <h3>최근 업로드된 글</h3>
-            {% for article in article_list %}
-            <div>
-                <p class="category_name">
-                    {{article.category}}
-                </p>
-                <span class="category_url">
-                    <a href="{% url 'article' article.id %}">
-                    {{article.title}}
-                    </a>
-                </span>
-
-            </div>
-            {% endfor %}
+{% block content %}
+    <div class="article_list">
+        <h3>최근 업로드된 글</h3>
+        {% for article in article_list %}
+        <div>
+            <span class="category_name">
+                {{article.category}}
+            </span>
+            <span class="category_url">
+                <a href="{% url 'article' article.id %}">
+                <p>{{article.title}}</p>
+                </a>
+            </span>
         </div>
-        </article>
-    {% endblock %}
+        {% endfor %}
+    </div>
+{% endblock %}
 
 

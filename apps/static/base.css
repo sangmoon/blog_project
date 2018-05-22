@@ -104,17 +104,25 @@ header a{
     margin: 2rem 0rem;
 }
 
-.article {
+/*.article {
     margin:2rem 0rem;
+}*/
+
+article #content_box{
+  border: 1px solid #ced4da;
+  margin-top: 2vh;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .category_name{
-  display: inline;
   color: #888888;
 }
 
-.category_url{
-  display: inline;
+.category_url p{
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 /* footer */
