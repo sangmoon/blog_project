@@ -32,3 +32,5 @@ django2.0
 jquery3.1
 bootstrap3.3.7
 postgresql 9.6 
+
+- https 인증을 위해 gogetssl.com의 comodo free ssl을 이용했다. (3개월마다 갱신 필요)
