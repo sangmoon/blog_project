@@ -4,19 +4,24 @@
         <article>
             <div class='article_header'>
                 <h3>{{article.title}}</h3>
-                <p>
-                    Posted on <time>
-                            {{article.created_at|date:"H:i"}}
+                <span>
+                    <STRONG>Posted on </STRONG><time>
                             {{article.created_at|date:"D d M Y"}}
-                    </time>
-                </p>
+                    </time></span>
+                  <span >
+                    <STRONG>Edited on </STRONG><time>{{article.updated_at|date:"D d M Y"}}</time>
+                </span>
                 <p>writer : {{user}}</p>
-                <form  action= {{edit_url}}>
-                    <input type="submit" value="edit" class="btn-default">
-                    <input type="hidden" name="edits" value="1">
+                <form  action= {{edit_url}} style="display: inline-block;">
+                    <input type="submit" value="edit" class=" btn-sm btn-outline-primary">
+                </form>
+                <form  action= "#" style="display: inline-block;">
+                    <input disabled="true" type="submit" value="delete" class=" btn-sm btn-outline-danger">
                 </form>
             </div>
+            <div style="border: 1px solid #ced4da; margin-top: 2vh; padding-left: 20px;">
             {{content|safe|linebreaks}}
+          </div>
         </article>
     {% endblock %}
 
