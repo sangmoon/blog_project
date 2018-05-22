@@ -2,7 +2,7 @@
 @import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
 
 /*
- to do: css를 media, body, header, main, footer  순으로 정리해서 적용해야한다. 이는 가독성을 높이는 방
+ to do: css를 media, body, header, main, footer  순으로 정리해서 적용해야한다. 이는 가독성을 높이는 방법
 
 */
 
@@ -69,18 +69,26 @@ h6,
   background-color: transparent;
 }
 
-header a{
-    color: #151515;
-}
+
 
 nav a{
     text-transform: uppercase;
 }
 
+header {
+  margin-top: 2rem;
+}
+
+header a{
+    color: #151515;
+}
+
+
+
 /* main */
 .main{
       margin-top:100px;
-    min-height: 100%;
+      min-height: 100vh;
 }
 
 .main a{
@@ -112,11 +120,15 @@ nav a{
 
 /* footer */
 footer{
-    position: relative;
-    bottom: 0px;
-    width:100%;
-    height :60px;
-    margin-top: 2rem;
+
+  height :30px;
+  padding-top: 10px;
+  margin-top: auto;
+
+}
+
+footer p{
+  margin-bottom: 0px;
 }
 
 
