@@ -7,6 +7,8 @@ from .forms import ArticleForm
 from django.contrib.auth.decorators import login_required
 from .templatetags.markdownify import markdown
 from .models import CATEGORY_CHOICES
+from django.shortcuts import render_to_response
+from django.template import RequestContext
 
 # Create your views here.
 
@@ -23,12 +25,13 @@ def article(request, article_id):
     user = get_object_or_404(User, pk=article.user.id)
 
     edit_url = "/edit/" + str(article.id)
-
+    delete_url = "/delete/" + str(article_id)
     return render(
         request, 'view_article.html',
         {
             'article': article, 'user': user,
-            'content': markdown(article.content), 'edit_url': edit_url
+            'content': markdown(article.content), 'edit_url': edit_url,
+            'delete_url': delete_url,
         })
 
 
@@ -36,8 +39,17 @@ def about(request):
     return render(request, 'about.html',)
 
 
+def delete_article(request, article_id):
+    article = get_object_or_404(Article, pk=article_id)
+    if article.user != request.user:
+        return HttpResponseForbidden()
+    else:
+        Article.delete(article)
+        return redirect('home_page')
+
+
 @login_required
-def write(request, article_id=None):
+def write_article(request, article_id=None):
 
     # edit form
     # get && id
@@ -76,3 +88,12 @@ def view_markdown(request):
         'md_js': markdown(request.GET.get('content'))
     }
     return JsonResponse(data)
+
+
+def page_not_found_view(request):
+    response = render_to_response('404.html', {}, context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+def my_server_error_view():
+    pass

@@ -23,8 +23,9 @@ urlpatterns = [
     path('admin', admin.site.urls),
     path('article/<int:article_id>', views.article, name='article'),
     path('about', views.about, name='about'),
-    path('write', views.write, name='write'),
-    path('edit/<int:article_id>', views.write, name='edit'),
+    path('write', views.write_article, name='write_article'),
+    path('edit/<int:article_id>', views.write_article, name='edit_article'),
+    path('delete/<int:article_id>', views.delete_article, name='delete_article'),
     path('login', login, name='login',
          kwargs={
             'template_name': 'login.html'
@@ -36,3 +37,5 @@ urlpatterns = [
     path('markdown', views.view_markdown, name='md'),
     path('', views.home_page, name='home_page'),
 ]
+
+handler404 = 'apps.views.page_not_found_view'

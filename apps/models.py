@@ -4,7 +4,8 @@ from django.contrib.auth.models import User
 
 CATEGORY_CHOICES = (
     ('python', 'python'), ('vue', 'vue'),
-    ('notice', 'notice'), ('etc', 'etc'))
+    ('notice', 'notice'), ('etc', 'etc'),
+    ('java', 'java'), ('docker', 'docker'), ('js', 'js'),)
 
 
 class Article(models.Model):
