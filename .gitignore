@@ -71,3 +71,6 @@ venv
 
 # DB dump
 database.json
+
+# vscode
+.vscode

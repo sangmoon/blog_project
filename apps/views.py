@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect
-from django.http import HttpResponseForbidden, HttpResponse, JsonResponse
+from django.http import HttpResponseForbidden, JsonResponse
 from .models import Article
 from django.contrib.auth.models import User
 from .forms import ArticleForm
@@ -11,6 +11,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 
 # Create your views here.
+
 
 def home_page(request):
     article_list = Article.objects.all()
@@ -26,6 +27,7 @@ def article(request, article_id):
 
     edit_url = "/edit/" + str(article.id)
     delete_url = "/delete/" + str(article_id)
+
     return render(
         request, 'view_article.html',
         {
@@ -85,13 +87,13 @@ def write_article(request, article_id=None):
 
 def view_markdown(request):
     data = {
-        'md_js': markdown(request.GET.get('content'))
+        'md_js': markdown(request.GET.get('content', None))
     }
     return JsonResponse(data)
 
 
 def page_not_found_view(request):
-    response = render_to_response('404.html', {}, context_instance=RequestContext(request))
+    response = render_to_response('404.html', {}, context=RequestContext(request))
     response.status_code = 404
     return response
 
